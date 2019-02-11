@@ -29,7 +29,7 @@ open class ApplyingTheme : Loading.LoadingInterface, ManagerAdmob.ManagerAdmobIn
     /***************FIRST MANAGER********************/
 
     override fun onLoadingShowing(nContext: Activity) {
-        ManagerAdmob.getInstance().init(nContext,this,idAdmob,nameLog)
+        ManagerAdmob.getInstance().init(nContext,this,nContext.resources.getString(R.string.idAdmobLib),nameLog)
     }
 
     override fun onAdmobLoaded(nAdmobInterstitial: InterstitialAd,nContext : Activity) {
@@ -54,7 +54,7 @@ open class ApplyingTheme : Loading.LoadingInterface, ManagerAdmob.ManagerAdmobIn
 
     private fun loadingSecondManager(nContext : Activity) {
         Log.d("afwef","admob - loadingSecondManager")
-        ManagerAppNext.getInstance().init(nContext,this,idAppnext,nameLog)
+        ManagerAppNext.getInstance().init(nContext,this,nContext.resources.getString(R.string.idAppnextLib),nameLog)
     }
 
     override fun onAppNextClosed(nContext: Activity) {
