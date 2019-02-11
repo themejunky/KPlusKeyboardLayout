@@ -1,0 +1,84 @@
+package com.kplayout2019.screen.mainscreen
+
+import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
+import android.databinding.DataBindingUtil
+import android.net.Uri
+import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import com.kplayout2019.ManagerLayout
+import com.kplayout2019.MyMainApplication
+import com.kplayout2019.R
+import com.kplayout2019.databinding.MainScreenLibraryBinding
+import com.kplayout2019.screen.moreapps.MoreApps
+import com.kplayout2019.screen.wallpapers.Wallpapers
+import com.kplayout2019.utils.ApplyingTheme
+import com.kplayout2019.utils.Tools
+import com.kplayout2019.utils.ViewModelFactory
+import com.theme.junky.themeskotlin.ads.ManagerNativeAdmob
+
+class MainScreenLibrary : AppCompatActivity() {
+    private val mTools = Tools()
+    private lateinit var mViewModel: MainScreenViewModel
+    private lateinit var mBinding: MainScreenLibraryBinding
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        mBinding = DataBindingUtil.setContentView(this, R.layout.main_screen_library)
+        mViewModel = ViewModelProviders.of(this, ViewModelFactory()).get(MainScreenViewModel::class.java)
+        mBinding.activity = this
+        init()
+        mViewModel.getAdsInfo()
+        mViewModel.getThemeInfo()
+
+
+
+    }
+
+    private fun init() {
+        supportActionBar?.hide()
+        mTools.skakeImage(this,findViewById(R.id.nImageShake),2000,2000)
+        ManagerNativeAdmob().init(this,getString(R.string.id_native_admob),findViewById(R.id.nativeAdsContainer))
+
+    }
+
+    fun applyTheme(){
+        (application as MyMainApplication).MGAE.getEvents(getString(R.string.layout_event),"Click on Apply","Click on Button")
+        ApplyingTheme().loadingFirstAdManager(this,mViewModel.interstitialAdmob,mViewModel.interstitialAppnext,"logInter")}
+
+    fun redirectToWhatsAppGP(){
+        (application as MyMainApplication).MGAE.getEvents(getString(R.string.layout_event),"Click on WhatsAppStickers Button","Click on Button")
+        startActivity(Intent(Intent.ACTION_VIEW,Uri.parse("https://play.google.com/store/apps/details?id=com.smsplus.sticker.pack.app")))}
+
+    fun redirectToWallpapers(){
+        (application as MyMainApplication).MGAE.getEvents(getString(R.string.layout_event),"Click on Wallpaper","Click on Button")
+        startActivity(Intent(this, Wallpapers::class.java))}
+
+    fun redirectToOurBestThemeGP(){
+        (application as MyMainApplication).MGAE.getEvents(getString(R.string.layout_event),"Click on OurBest","Click on Button")
+        if(mViewModel.ourBestTheme.isEmpty()){ startActivity(Intent(Intent.ACTION_VIEW,Uri.parse("https://play.google.com/store/apps/details?id=com.themejunky.launchers")))}
+        else{startActivity(Intent(Intent.ACTION_VIEW,Uri.parse(mViewModel.ourBestTheme)))}}
+
+    fun redirectToMoreApps(){
+        (application as MyMainApplication).MGAE.getEvents(getString(R.string.layout_event),"Click on MoreApps","Click on Button")
+        startActivity(Intent(this, MoreApps::class.java))}
+
+    fun openPrivacyPolicy(){
+        (application as MyMainApplication).MGAE.getEvents(getString(R.string.layout_event),"PrivacyPolicy","Click on Button")
+        Tools().showPrivacyPolicy(this)}
+
+    fun redirectToLiveWallpaper() {
+        startActivity(Intent(this, ManagerLayout.getInstance().getMyClass()))
+        finish()
+    }
+    fun shareTheme(){
+        (application as MyMainApplication).MGAE.getEvents(getString(R.string.layout_event),"Share","Click on Button")
+        mTools.shareTheme(this)}
+
+    override fun onBackPressed() {
+        mTools.existApp(this,findViewById(R.id.scrollViewId))}
+
+
+}
