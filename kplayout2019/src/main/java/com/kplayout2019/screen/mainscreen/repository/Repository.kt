@@ -19,8 +19,8 @@ class Repository (val mViewModel: MainScreenViewModel) {
 
     private fun successGetAds(mResult: AdsReceived){
         with(mViewModel){
-            interstitialAdmob = mResult.keys.admob_interstitial
-            interstitialAppnext = mResult.keys.appnext
+            //interstitialAdmob = mResult.keys.admob_interstitial
+            //interstitialAppnext = mResult.keys.appnext
             android.util.Log.d("Afef","interstitialAdmob: ${interstitialAdmob} ---/--- interstitialAppnext ${interstitialAppnext}")
         }
 
