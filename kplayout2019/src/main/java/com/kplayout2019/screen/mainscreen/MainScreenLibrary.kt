@@ -71,7 +71,7 @@ class MainScreenLibrary : AppCompatActivity() {
 
     fun redirectToLiveWallpaper() {
         val intent = Intent(this, ManagerLayout.getInstance().getMyClass())
-        intent.putExtra("fromPNLiveWallpaper",true)
+        intent.putExtra("toLiveWallpaper",true)
         startActivity(intent)
         finish()
     }
