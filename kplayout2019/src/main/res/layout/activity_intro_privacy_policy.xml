@@ -26,14 +26,14 @@
             <ImageView
                     android:id="@+id/nView2"
                     style="@style/Cube130"
-                    android:src="@drawable/preview"
+                    android:src="@drawable/preview_light"
                     android:contentDescription="@string/app_name"
                     android:layout_marginTop="10dp"/>
 
             <TextView
                     android:id="@+id/nView3"
                     style="@style/WrapWrap.Black.14"
-                    android:text="@string/app_name"
+                    android:text="@string/ime_name"
                     android:textSize="14sp"
                     android:layout_marginTop="10dp"/>
 

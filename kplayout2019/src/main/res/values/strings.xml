@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">ThemesKotlin</string>
+    <string name="ime_name">ThemesKotlin</string>
     <string name="mother_url">market://details?id=com.themejunky.keyboardplus</string>
     <string name="name_application_to_apply">Best Keyboard</string>
     <string name="privacy">
