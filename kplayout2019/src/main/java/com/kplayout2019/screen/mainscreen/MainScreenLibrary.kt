@@ -70,7 +70,7 @@ class MainScreenLibrary : AppCompatActivity() {
         Tools().showPrivacyPolicy(this)}
 
     fun redirectToLiveWallpaper() {
-        val intent = Intent(this, ManagerLayout.getInstance().getMyClass())
+        val intent = Intent(this, ManagerLayout.getInstance().getLiveWallClass())
         intent.putExtra("toLiveWallpaper",true)
         startActivity(intent)
         finish()
