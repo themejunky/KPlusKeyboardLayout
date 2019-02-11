@@ -1,11 +1,8 @@
 package com.themejunkylayout2019
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import com.kplayout2019.ManagerLayout
-import com.kplayout2019.screen.IntroPrivacyPolicy
 
 class MainActivityy : AppCompatActivity() {
 
