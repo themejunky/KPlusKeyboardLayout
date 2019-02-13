@@ -73,7 +73,7 @@ class MainScreenLibrary : AppCompatActivity() {
         val intent = Intent(this, ManagerLayout.getInstance().getLiveWallClass())
         intent.putExtra("toLiveWallpaper",true)
         startActivity(intent)
-        finish()
+
     }
     fun shareTheme(){
         (application as MyMainApplication).MGAE.getEvents(getString(R.string.layout_event),"Share","Click on Button")
