@@ -52,7 +52,7 @@ open class Tools : AdListener() {
         iStream.close()
 
         var str = String(buffer)
-        str = str.replace("Best Keyboard Themes", "The developer ").replace("Keyboard Hell", nContext.getString(R.string.app_name))
+        str = str.replace("Best Keyboard Themes", "The developer ").replace("Keyboard Hell", nContext.getString(R.string.ime_name))
         return str
     }
 
