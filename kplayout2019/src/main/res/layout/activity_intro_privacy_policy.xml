@@ -26,7 +26,7 @@
             <ImageView
                     android:id="@+id/nView2"
                     style="@style/Cube130"
-                    android:src="@drawable/preview_light"
+                    android:src="@drawable/preview_light_red"
                     android:contentDescription="@string/app_name"
                     android:layout_marginTop="10dp"/>
 
