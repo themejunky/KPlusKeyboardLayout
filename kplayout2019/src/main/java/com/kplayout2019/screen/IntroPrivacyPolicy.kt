@@ -18,8 +18,11 @@ class IntroPrivacyPolicy : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro_privacy_policy)
         init()
+        Log.d("asdfasdf","IntroPrivacyPolicy")
         FirebaseApp.initializeApp(this)
-        FirebaseMessaging.getInstance().subscribeToTopic(getString(R.string.subscribeToTopic))
+        Log.d("asdfasdf","IntroPrivacyPolicy 2")
+        FirebaseMessaging.getInstance().subscribeToTopic("redkeyboard")
+        Log.d("asdfasdf","IntroPrivacyPolicy 3")
         prefs = getSharedPreferences("my_app", Context.MODE_PRIVATE)
 
         if(prefs.getBoolean("first",false)){

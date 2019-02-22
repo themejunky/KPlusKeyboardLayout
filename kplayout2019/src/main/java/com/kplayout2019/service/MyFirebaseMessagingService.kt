@@ -29,6 +29,7 @@ class MyFirebaseMessagingService  : FirebaseMessagingService() {
     }
 
     private fun showNotification(context: Context, title: String?, message: String?, icon: String?, url: String?) {
+        Log.d("asdfasdf","showNotification")
         redirectGP = url.toString()
         val channelId = "channel-01"
         val channelName = "Channel Name"
