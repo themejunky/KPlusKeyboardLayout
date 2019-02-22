@@ -88,8 +88,8 @@
     </style>
 
     <style name="Cube130">
-        <item name="android:layout_width">130dp</item>
-        <item name="android:layout_height">130dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
     <style name="TextView_GB_Logo2">
