@@ -34,7 +34,7 @@ class MainScreenLibrary : AppCompatActivity() {
         mViewModel.getThemeInfo()
 
 
-
+//test
     }
 
     private fun init() {
